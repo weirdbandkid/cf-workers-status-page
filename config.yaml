@@ -1,12 +1,12 @@
 settings:
-  title: 'Status Page'
-  url: 'https://status-page.eidam.dev' # used for Slack messages
-  logo: logo-192x192.png # image in ./public/ folder
+  title: 'Fire Modifications Status Page'
+  url: 'https://stats.firemodifications.com' # used for Slack messages
+  logo: logo.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
+  notAllmonitorsOperational: 'Degraded Services'
   monitorLabelOperational: 'Operational'
   monitorLabelNotOperational: 'Not Operational'
   monitorLabelNoData: 'No data'
@@ -15,25 +15,25 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
+  - id: firemodifications.com # unique identifier
+    name: firemodifications.com
+    description: 'Our Main Site' # default=empty
+    url: 'https://firemodifications.com/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
     linkable: false # allows the title to be a link, default=true
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
-    url: 'https://www.cloudflare.com'
+  - id: docs.firemodifications.com
+    name: docs.firemodifications.com
+    description: 'Documentation Page'
+    url: 'https://docs.firemodifications.com'
     method: GET
     expectStatus: 200
     linkable: true # allows the title to be a link, default=true
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
-    method: GET
-    expectStatus: 200
+ # - id: blog-cloudflare-com
+ #   name: The Cloudflare Blog
+ #   url: 'https://blog.cloudflare.com/'
+ #   method: GET
+ #   expectStatus: 200
